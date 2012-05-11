@@ -1,0 +1,22 @@
+the user
+rating
+
+<%= form_for(@entry) do |f| %>
+
+  <%= f.select :user_id, User.all.collect{|e| [e.email, e.id]} %>
+  <%= f.label 'Positive Karma' %>
+ 
+  <%= f.text_field :pos_karma %>
+
+  <%= f.label 'Negative Karma' %>
+  <%= f.text_field :neg_karma %>
+
+  <%= radio_button("entry", "rating", 1) %>
+  <%= radio_button("entry", "rating", 2) %>
+  <%= radio_button("entry", "rating", 3) %>
+  <%= radio_button("entry", "rating", 4) %>
+  <%= radio_button("entry", "rating", 5) %>
+
+
+  <%= f.submit 'save', :class => 'btn' %>
+<% end %>
