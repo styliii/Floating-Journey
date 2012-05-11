@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
 */
+
+#site-title {
+  margin-bottom: 20px;
+}

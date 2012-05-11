@@ -1,0 +1,25 @@
+
+  <p id="notice"><%= notice %></p>
+
+  <h3><%= @user.email %></h3>
+  <%= link_to 'New Entry', new_entry_path, :class => "btn pull-right" %>
+
+  <table class="table">
+    <tr>
+      <th>Positive</th>
+      <th>Negative</th>
+      <th>Rating</th>
+      <th>Timestamp</th>
+    </tr>
+  <% @entries.each do |e| %>
+    <tr>
+      <td><%= e.pos_karma %></td>
+      <td><%= e.neg_karma %></td>
+      <td><%= e.rating %></td>
+      <td><%= e.created_at %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
