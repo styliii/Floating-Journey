@@ -1,21 +1,21 @@
 class EntriesController < ApplicationController
   before_filter :authorize
   def index
-    @user = User.first
-    @entries = @user.entries
+    @user = current_user
+    @entries = @user.entries.order(:created_at).reverse_order
   end
 
   def new
-    @entry = Entry.new
-    # @user = User.first # hackey!!
+    @entry = Entry.new    
   end
 
   def create
     @entry = Entry.new(params[:entry])
-
+    @entry.user = current_user
+  
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to entries_path, notice: 'Entry was successfully created.' }
         format.json { render json: @entry, status: :created, location: @entry }
       else
         format.html { render action: "new" }
