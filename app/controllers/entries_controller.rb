@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_filter :authorize
   def index
     @user = User.first
     @entries = @user.entries

@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20120513051403) do
 
+
   create_table "entries", :force => true do |t|
     t.text     "pos_karma"
     t.text     "neg_karma"

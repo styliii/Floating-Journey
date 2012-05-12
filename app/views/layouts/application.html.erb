@@ -19,7 +19,24 @@
     <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
   </head>
   <body>
+
     <div class="container">
+      <div class="pull-right">
+      <% if current_user %>
+        
+        <ul>
+          <li>logged in as <%= current_user.email %></li>
+          <li><%= link_to "logout", logout_path %></li>
+        </ul>
+
+      <% else %>
+        <ul>
+          <li><%= link_to "sign up", signup_path %></li>
+          <li><%= link_to "login", login_path %></li>
+        </ul>
+      <% end %>
+      </div>
+
       <h1 id="site-title">Floating Journey</h1>
       <div class="subnav">
           <ul class="nav nav-pills">
