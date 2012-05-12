@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
-    @user = User.first # hackey!!
+    # @user = User.first # hackey!!
   end
 
   def create
