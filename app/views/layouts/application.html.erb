@@ -23,12 +23,10 @@
     <div class="container">
       <div class="pull-right">
       <% if current_user %>
-        
         <ul>
           <li>logged in as <%= current_user.email %></li>
           <li><%= link_to "logout", logout_path %></li>
         </ul>
-
       <% else %>
         <ul>
           <li><%= link_to "sign up", signup_path %></li>
@@ -38,6 +36,7 @@
       </div>
 
       <h1 id="site-title">Floating Journey</h1>
+      <% if current_user %>
       <div class="subnav">
           <ul class="nav nav-pills">
             <li><%= link_to 'Home', '/' %></li>
@@ -45,10 +44,9 @@
             <li><%#= link_to 'Users', users_path %></li>
             <li><%= link_to 'Entries', entries_path %></li>
             <li><%#= link_to 'My Settings', edit_user_path(@user) %></li>
-
           </ul>
       </div>
-
+      <% end %>
       <br />
 
       <div class="content">       
