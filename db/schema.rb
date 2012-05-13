@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511200350) do
+ActiveRecord::Schema.define(:version => 20120513051403) do
 
   create_table "entries", :force => true do |t|
     t.text     "pos_karma"
@@ -20,13 +20,15 @@ ActiveRecord::Schema.define(:version => 20120511200350) do
     t.integer  "rating"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "note"
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "name"
+    t.string   "password_digest"
   end
 
 end
