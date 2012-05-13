@@ -1,6 +1,16 @@
 <%= form_for(@entry) do |f| %>
+<% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <%#= f.select :user_id, User.all.collect{|e| [e.email, e.id]} %>
+      <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.label 'Positive Karma' %>
  
   <%= f.text_field :pos_karma %>
