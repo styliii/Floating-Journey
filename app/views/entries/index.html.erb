@@ -6,17 +6,19 @@
 
   <table class="table">
     <tr>
+      <th>Rating</th>
+      <th>Note</th>
       <th>Positive</th>
       <th>Negative</th>
-      <th>Rating</th>
       <th>Timestamp</th>
     </tr>
   <% @entries.each do |e| %>
     <tr>
+      <td><%= e.rating %></td>
+      <td><%= e.note %></td>
       <td><%= e.pos_karma %></td>
       <td><%= e.neg_karma %></td>
-      <td><%= e.rating %></td>
-      <td><%= e.created_at %></td>
+      <td><%= e.created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:long) %></td>
     </tr>
   <% end %>
   </table>
