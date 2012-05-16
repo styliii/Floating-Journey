@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
+        UserMailer.signup_confirmation(@user).deliver
         format.html { redirect_to new_entry_path, notice: 'Thank you for signing up!' }
         format.json { render json: @user, status: :created, location: @user }
       else
