@@ -12,6 +12,10 @@
  *= require_tree .
 */
 
+body {
+  background: url(/assets/bg-noise.jpeg) !important;
+}
+
 #site-title {
   margin-bottom: 20px;
 }
