@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_filter :authorize
+  
   def index
     @user = current_user
     @entries = @user.entries.order(:created_at).reverse_order
@@ -21,6 +22,16 @@ class EntriesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+
+    respond_to do |format|
+      format.html { redirect_to entries_url }
+      format.json { head :no_content }
     end
   end
 

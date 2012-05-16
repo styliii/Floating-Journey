@@ -11,16 +11,6 @@
     </div>
   <% end %>
 
-  <%= f.label 'Positive Karma' %>
- 
-  <%= f.text_field :pos_karma %>
-
-  <%= f.label 'Negative Karma' %>
-  <%= f.text_field :neg_karma %>
-
-  <%= f.label 'Note' %>
-  <%= f.text_field :note %>
-
   <br>
   <%= f.label 'Mood Rating' %>
   <%= radio_button("entry", "rating", 1) %> 1
@@ -30,5 +20,20 @@
   <%= radio_button("entry", "rating", 5) %> 5
   <br>
   <br>
+
+  <%= f.label 'Notes' %>
+  <%= f.text_field :note %>
+
+
+
+
+  <%= f.label 'Positive Karma' %>
+ 
+  <%= f.text_field :pos_karma %>
+
+  <%= f.label 'Negative Karma' %>
+  <%= f.text_field :neg_karma %>
+
+
   <%= f.submit 'save', :class => 'btn' %>
 <% end %>

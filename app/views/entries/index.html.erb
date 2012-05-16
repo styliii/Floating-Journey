@@ -1,9 +1,5 @@
 <%= link_to 'New Entry', new_entry_path, :class => "btn" %>
 
-
-  <p id="notice"><%= notice %></p>
-
-
   <table class="table">
     <tr>
       <th>Rating</th>
@@ -11,6 +7,7 @@
       <th>Positive</th>
       <th>Negative</th>
       <th>Timestamp</th>
+      <th></th>
     </tr>
   <% @entries.each do |e| %>
     <tr>
@@ -19,6 +16,7 @@
       <td><%= e.pos_karma %></td>
       <td><%= e.neg_karma %></td>
       <td><%= e.created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:long) %></td>
+      <td><%= link_to 'delete', e, confirm: 'Are you sure?', method: :delete %></td>
     </tr>
   <% end %>
   </table>
