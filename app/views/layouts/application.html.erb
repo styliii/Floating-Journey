@@ -20,23 +20,21 @@
   </head>
   <body>
 
+
     <div class="container">
-      <div class="span8">
+      <div class="span10">
         <div class="pull-right">
         <ul class="nav nav-pills">
         <% if current_user %>          
           <li><%= link_to 'Entries', entries_path %></li>
           <li class="dropdown">
-            <a class="dropdown-toggle"
-               data-toggle="dropdown"
-               href="#">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <%= current_user.email %>
                 <b class="caret"></b>
               </a>
             <ul class="dropdown-menu">
               <!-- links -->
-              <li>Account Settings</li>
-              <%#= link_to 'My Settings', edit_user_path(@user) %>
+              <li><%= link_to 'My Settings', settings_path %></li>
               <li><%= link_to "logout", logout_path %></li>      
             </ul>
           </li>

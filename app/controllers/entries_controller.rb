@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_filter :authorize
+  
   def index
     @user = current_user
     @entries = @user.entries.order(:created_at).reverse_order
