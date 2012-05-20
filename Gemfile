@@ -19,6 +19,8 @@ end
 gem 'jquery-rails', '2.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'clockwork', '0.2.0'
+gem 'delayed_job_active_record'
 
 
 group :test do
